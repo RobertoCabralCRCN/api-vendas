@@ -1,4 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { UUID } from 'typeorm/driver/mongodb/bson.typings';
 
 export class CreateUsers1694010971097 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -10,7 +11,8 @@ export class CreateUsers1694010971097 implements MigrationInterface {
             name: 'id',
             type: 'uuid',
             isPrimary: true,
-            isNullable: true
+            isGenerated: true,
+            generationStrategy: 'uuid'
           },
           {
             name: 'name',

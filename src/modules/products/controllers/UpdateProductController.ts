@@ -1,6 +1,5 @@
 import { container } from 'tsyringe';
 import { Request, Response } from 'express';
-import { celebrate, Joi, Segments } from 'celebrate';
 import { UpdateProductsService } from '../services/UpdateProductService';
 
 class UpdateProductController {
