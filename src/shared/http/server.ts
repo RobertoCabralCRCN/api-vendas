@@ -7,6 +7,7 @@ import routes from './routes';
 import AppError from '@shared/errors/AppError';
 import '@shared/typeorm';
 import '@config/container/index';
+import '@modules/users/middlewares/isAuthenticated';
 
 const app = express();
 
