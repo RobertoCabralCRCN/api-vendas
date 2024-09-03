@@ -7,13 +7,14 @@ import routes from './routes';
 import AppError from '@shared/errors/AppError';
 import '@shared/typeorm';
 import '@config/container/index';
-import '@modules/users/middlewares/isAuthenticated';
+import '@shared/middlewares/isAuthenticated';
+import uploadConfig from '@config/upload';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+app.use('/files', express.static(uploadConfig.directory));
 app.use(routes);
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {
